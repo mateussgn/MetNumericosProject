@@ -2,91 +2,184 @@
 \usepackage[top=2cm, right=3cm, bottom=3cm, left=2cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amsfonts, amssymb}
+
 \begin{document}
-	\begin{enumerate}
+	\begin{center}
+		\textbf{Projeto de Métodos Numéricos 2019.1}
+	\end{center}
+%começo do sumário
+	\begin{center}
+		\textbf{Sumário}
+	\end{center}
+	\begin{flushleft}		
+		\textbf{I. Introdução}
 		\item
-			\begin{enumerate}
-				\item
-					Temos que:
-					$$\dfrac{dP}{dt} = -kP(t)$$
-					Multiplicando ambos os lados por \underline{dt} e isolando o \underline{-k} do \underline{P(t)} temos:
-					$$\dfrac{dP}{P(t)} = -kdt \;\;(2)$$
-					Usando o método das equações separáveis temos:
-					$$\int\dfrac{dP}{P(t)} = -\int kdt$$
-					Resolvendo a integral temos:
-					$$ln[P(t)] = -kt+C$$
-					$$\textit{e}^{ln[P(t)]} = \textit{e}^{-kt+C}$$
-					$$P(t) = \textit{e}^{-kt+C}$$
-					$$P(t) = \textit{e}^{-kt}\cdot\textit{e}^C$$
-					$$P(t) = C\textit{e}^{-kt}$$
-					Para achar a constante \underline{k}, usamos o dado fornecido no enunciado:
-					$$3P(t) = P(t+10)$$
-					$$3C\textit{e}^{-kt} = C\textit{e}^{-k(t+10)}$$
-					$$3C\textit{e}^{-kt} = C\textit{e}^{-kt-10k}$$
-					$$3C\textit{e}^{-kt} = C\textit{e}^{-kt}\cdot\textit{e}^{-10k}$$
-					$$3 = \textit{e}^{-10k}$$
-					$$ln (3) = ln(\textit{e}^{-10k})$$
-					$$ln (3) = -10k\cdot ln(\textit{e})$$
-					$$-10k = ln(3)$$
-					$$k = -\dfrac{ln (3)}{10}$$
-					Resolvendo:
-					$$P(20) = P(0)e^{\frac{ln (3)}{10}\cdot 20}$$
-					$$150000 = P(0)e^{2ln(3)}$$
-					$$P(0) = 16,667\;\;CORRIGIR$$
-				\item
+		\textbf{II. Problema 1}
+		\begin{enumerate}
+			\item
+				Problema
+			\item
+				Modelo
+			\item
+				Solução Analítica
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
 		\end{enumerate}
+		\textbf{III. Problema 2}
+		\begin{enumerate}
+			\item
+				Problema
+			\item
+				Modelo
+			\item
+				Solução Analítica
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+		\textbf{III. Problema 3}
+		\begin{enumerate}
+			\item
+				Problema
+			\item
+				Modelo
+			\item
+				Solução Analítica
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+		\textbf{IV. Problema 4}
+		\begin{enumerate}
+			\item
+				Problema
+			\item
+				Modelo
+			\item
+				Solução Analítica
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+	\end{flushleft}
+%fim do sumário
+%começo dos capítulos
+	\begin{flushleft}		
+		\textbf{I. Introdução}
 		\item
-			\begin{enumerate}
-				\item
-					$\dfrac{dA}{dt} =\;$taxa de entrada - taxa de saída. Usando os valores fornecidos no enunciado:					
-					$$\dfrac{dA}{dt} = 2r - r\dfrac{A}{300}$$
-					Onde \underline{r} é o fluxo de entrada dos galões.
-					
-					Usando o método de fator integrante:
-					$$\dfrac{dA}{dt}+ r\dfrac{A}{300} = 2r$$
-					$$\dfrac{dA}{dt}\cdot\mu+ r\dfrac{A}{300}\cdot\mu = 2r\cdot\mu$$
-					Onde $\mu$ = $\textit{e}^{\int \frac{r}{300}dt}$.
-					$$\dfrac{d}{dt}(A\textit{e}^{\frac{rt}{300}}) = 2r\textit{e}^{\frac{rt}{300}}$$
-					Integrando ambos os lados:
-					$$A\textit{e}^{\frac{rt}{300}} = 600\dfrac{r\textit{e}^{\frac{rt}{300}}}{r}+C$$
-					$$A = 600 + \dfrac{C}{\textit{e}^{\frac{rt}{300}}}$$
-					$$A(t) = 600 + C\textit{e}^{-\frac{rt}{300}}$$
-					Achando valor de \underline{C}:
-					$$50 = 600 + C$$
-					$$C = -550$$
-					Substituindo em \underline{A(t)}:
-					$$A(t) = 600 - 550\textit{e}^{-\frac{rt}{300}}$$
-				\item
-					$$A(100) = 600 - 550\textit{e}^{-1}$$
-					$$A(100) = 397,666\;ll$$
-				\item
-			\end{enumerate}
-		\item
-			\begin{enumerate}
-				\item
-					Usando T = 0:
-					$$T = C\cdot\textit{e}^{kt} + T_n$$
-					$$T = C + T_n$$
-					$$C = T - T_n$$
-					Usando os dados do enunciado:
-					$$T = (T - T_n)\textit{e}^{kt} + T_n$$
-					$$T - T_n= (T - T_n)\textit{e}^{3k}$$
-					$$200 - 70 = (300 - 70)\textit{e}^{3k}$$
-					$$130 = 230\textit{e}^{3k}$$
-					$$\textit{e}^{3k} = \dfrac{130}{230}$$
-					$$ln(\textit{e}^{3k}) = ln(\dfrac{13}{23})$$
-					$$3k\cdot ln(\textit{e}) = ln(\dfrac{13}{23})$$
-					$$k = \dfrac{ln(\dfrac{13}{23})}{3}$$
-					$$k = -\dfrac{2}{10}$$
-					
-					$$75 - 70 = 230\textit{e}^{-\frac{2t}{10}}$$
-					$$\textit{e}^{-\frac{2t}{10}} = \dfrac{5}{230}$$
-					$$\textit{e}^{-\frac{2t}{10}} = \dfrac{1}{46}$$
-					$$ln(\textit{e}^{-\frac{2t}{10}}) = ln(\dfrac{1}{46})$$
-					$$-\dfrac{2t}{10}\cdot ln(\textit{e}) = ln(\dfrac{1}{46})$$
-					$$t = -\dfrac{ln(\dfrac{1}{46})}{5}$$
-					$$t = 19,14 \;min$$
-				\item
-			\end{enumerate}
-	\end{enumerate}
+		\textbf{II. Problema 1}
+		\begin{enumerate}
+			\item
+				Problema
+				\begin{enumerate}
+					\item
+						Temos que:
+						$$\dfrac{dP}{dt} = -kP(t)$$
+						Multiplicando ambos os lados por \underline{dt} e isolando o \underline{-k} do \underline{P(t)} temos:
+						$$\dfrac{dP}{P(t)} = -kdt \;\;(2)$$
+						Usando o método das equações separáveis temos:
+						$$\int\dfrac{dP}{P(t)} = -\int kdt$$
+						Resolvendo a integral temos:
+						$$ln[P(t)] = -kt+C$$
+						$$\textit{e}^{ln[P(t)]} = \textit{e}^{-kt+C}$$
+						$$P(t) = \textit{e}^{-kt+C}$$
+						$$P(t) = \textit{e}^{-kt}\cdot\textit{e}^C$$
+						$$P(t) = C\textit{e}^{-kt}$$
+						Para achar a constante \underline{k}, usamos o dado fornecido no enunciado:
+						$$3P(t) = P(t+10)$$
+						$$3C\textit{e}^{-kt} = C\textit{e}^{-k(t+10)}$$
+						$$3C\textit{e}^{-kt} = C\textit{e}^{-kt-10k}$$
+						$$3C\textit{e}^{-kt} = C\textit{e}^{-kt}\cdot\textit{e}^{-10k}$$
+						$$3 = \textit{e}^{-10k}$$
+						$$ln (3) = ln(\textit{e}^{-10k})$$
+						$$ln (3) = -10k\cdot ln(\textit{e})$$
+						$$-10k = ln(3)$$
+						$$k = -\dfrac{ln (3)}{10}$$
+						Resolvendo:
+						$$P(20) = P(0)e^{\frac{ln (3)}{10}\cdot 20}$$
+						$$150000 = P(0)e^{2ln(3)}$$
+						$$P(0) = 16.666,667$$
+					\item
+				\end{enumerate}
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+		\textbf{III. Problema 2}
+		\begin{enumerate}
+			\item
+				Problema
+				\begin{enumerate}
+					\item
+						$\dfrac{dA}{dt} =\;$taxa de entrada - taxa de saída. Usando os valores fornecidos no enunciado:					
+						$$\dfrac{dA}{dt} = 2r - r\dfrac{A}{300}$$
+						Onde \underline{r} é o fluxo de entrada dos galões.
+						
+						Usando o método de fator integrante:
+						$$\dfrac{dA}{dt}+ r\dfrac{A}{300} = 2r$$
+						$$\dfrac{dA}{dt}\cdot\mu+ r\dfrac{A}{300}\cdot\mu = 2r\cdot\mu$$
+						Onde $\mu$ = $\textit{e}^{\int \frac{r}{300}dt}$.
+						$$\dfrac{d}{dt}(A\textit{e}^{\frac{rt}{300}}) = 2r\textit{e}^{\frac{rt}{300}}$$
+						Integrando ambos os lados:
+						$$A\textit{e}^{\frac{rt}{300}} = 600\dfrac{r\textit{e}^{\frac{rt}{300}}}{r}+C$$
+						$$A = 600 + \dfrac{C}{\textit{e}^{\frac{rt}{300}}}$$
+						$$A(t) = 600 + C\textit{e}^{-\frac{rt}{300}}$$
+						Achando valor de \underline{C}:
+						$$50 = 600 + C$$
+						$$C = -550$$
+						Substituindo em \underline{A(t)}:
+						$$A(t) = 600 - 550\textit{e}^{-\frac{rt}{300}}$$
+					\item
+						$$A(100) = 600 - 550\textit{e}^{-1}$$
+						$$A(100) = 397,666\;ll$$
+					\item
+				\end{enumerate}
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+		\textbf{III. Problema 3}
+		\begin{enumerate}
+			\item
+				Problema
+				\begin{enumerate}
+					\item
+						Usando T = 0:
+						$$T = C\cdot\textit{e}^{kt} + T_n$$
+						$$T = C + T_n$$
+						$$C = T - T_n$$
+						Usando os dados do enunciado:
+						$$T = (T_0 - T_n)\textit{e}^{kt} + T_n$$
+						$$T - T_n= (T_0 - T_n)\textit{e}^{3k}$$
+						$$200 - 70 = (300 - 70)\textit{e}^{3k}$$
+						$$130 = 230\textit{e}^{3k}$$
+						$$\textit{e}^{3k} = \dfrac{130}{230}$$
+						$$ln(\textit{e}^{3k}) = ln(\dfrac{13}{23})$$
+						$$3k\cdot ln(\textit{e}) = ln(\dfrac{13}{23})$$
+						$$k = \dfrac{ln(\dfrac{13}{23})}{3}$$
+						$$k = -\dfrac{2}{10}$$
+						
+						$$75 - 70 = 230\textit{e}^{-\frac{2t}{10}}$$
+						$$\textit{e}^{-\frac{2t}{10}} = \dfrac{5}{230}$$
+						$$\textit{e}^{-\frac{2t}{10}} = \dfrac{1}{46}$$
+						$$ln(\textit{e}^{-\frac{2t}{10}}) = ln(\dfrac{1}{46})$$
+						$$-\dfrac{2t}{10}\cdot ln(\textit{e}) = ln(\dfrac{1}{46})$$
+						$$t = -\dfrac{ln(\dfrac{1}{46})}{5}$$
+						$$t = 19,14 \;min$$
+					\item
+				\end{enumerate}
+			\item
+				Gráficos das Soluções Numéricas
+			\item
+				O que acontece quando t tende ao ifinito?
+		\end{enumerate}
+	\end{flushleft}
+%fim dos Capítulos
 \end{document}
